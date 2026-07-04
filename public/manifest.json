@@ -3,7 +3,7 @@
   "short_name": "Ram",
   "description": "AI CRM Platform",
   "start_url": "./",
-  "scope": "/",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#090909",
