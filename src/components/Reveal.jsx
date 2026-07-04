@@ -10,37 +10,34 @@ function Reveal({
 
   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
+useEffect(() => {
 
-    const element = ref.current;
+  const element = ref.current;
 
-    if (!element) return;
+  if (!element) return;
 
-    const observer = new IntersectionObserver(
+  const observer = new IntersectionObserver(
+    ([entry]) => {
 
-      ([entry]) => {
+      if (entry.isIntersecting) {
 
-        if (entry.isIntersecting) {
+        setVisible(true);
 
-          setVisible(true);
+        observer.unobserve(element);
 
-          observer.unobserve(element);
-
-        }
-
-      },
-
-      {
-        threshold: 0.01,,
       }
 
-    );
+    },
+    {
+      threshold: 0.01,
+    }
+  );
 
-    observer.observe(element);
+  observer.observe(element);
 
-    return () => observer.disconnect();
+  return () => observer.disconnect();
 
-  }, []);
+}, []);
 
   return (
 
