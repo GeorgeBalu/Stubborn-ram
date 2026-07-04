@@ -72,7 +72,7 @@ body{
 
 .hero{
 
-    min-height:100vh;
+    min-height:calc(100vh - 44px);
 
     display:flex;
 
@@ -777,4 +777,72 @@ body{
 
 section{
     width:100%;
+}
+/* ============================= */
+/*      Hero Start Animation     */
+/* ============================= */
+
+.hero-logo {
+
+    opacity: 0;
+
+    transform:
+        translateY(18px)
+        scale(.97);
+
+    animation:
+        heroFade 1.2s ease forwards;
+
+    animation-delay: 0s;
+
+}
+
+.hero-topbar {
+
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+    animation:
+        heroFade 1s ease forwards;
+
+    animation-delay: .7s;
+
+}
+
+.hero-title {
+
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+    animation:
+        heroFade 1s ease forwards;
+
+    animation-delay: 1s;
+
+}
+
+@keyframes heroFade {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
 }

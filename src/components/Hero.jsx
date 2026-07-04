@@ -13,7 +13,7 @@ function Hero() {
   return (
     <section className="hero">
 
-      <div className="topBar">
+      <div className="topBar hero-topbar">
         <button className="topButton">
           Регистрация
         </button>
@@ -26,127 +26,122 @@ function Hero() {
       <img
         src={logo}
         alt="Stubborn Ram"
-        className="logo"
+        className="logo hero-logo"
       />
 
-      <h2 className="heroTitle">
+      <h2 className="heroTitle hero-title">
         Натуральный бодибилдинг
       </h2>
 
       <div className="heroFeatures">
 
-        <div className="featureCard">
-          Персональное онлайн ведение
-        </div>
+        <Reveal delay={1300}>
+          <div className="featureCard">
+            Персональное онлайн ведение
+          </div>
+        </Reveal>
 
-        <div className="featureCard">
-          Составление тренировочных программ
-        </div>
+        <Reveal delay={1450}>
+          <div className="featureCard">
+            Составление тренировочных программ
+          </div>
+        </Reveal>
 
-        <div className="featureCard">
-          Обучение грамотному тренингу
-        </div>
+        <Reveal delay={1600}>
+          <div className="featureCard">
+            Обучение грамотному тренингу
+          </div>
+        </Reveal>
 
-        <div className="featureCard">
-          Цельная экосистема фитнеса
-        </div>
+        <Reveal delay={1750}>
+          <div className="featureCard">
+            Цельная экосистема фитнеса
+          </div>
+        </Reveal>
 
       </div>
 
       <div className="bottomButtons">
-<Reveal>
 
-  <h2 className="aboutTitle">
-    Кто я
-  </h2>
+        <Reveal>
+          <h2 className="aboutTitle">
+            Кто я
+          </h2>
+        </Reveal>
 
-</Reveal>
+        <Reveal delay={150}>
+          <img
+            src={aboutImage}
+            alt="Кто я"
+            className="aboutImage"
+          />
+        </Reveal>
 
-<Reveal delay={150}>
+        <Reveal>
+          <h2 className="resultTitle">
+            Что вы получите
+          </h2>
+        </Reveal>
 
-  <img
-    src={aboutImage}
-    alt="Кто я"
-    className="aboutImage"
-  />
+        <Reveal delay={150}>
+          <Carousel />
+        </Reveal>
 
-</Reveal>
-<Reveal>
+        <Reveal>
+          <h2 className="resultTitle">
+            Результаты клиентов
+          </h2>
+        </Reveal>
 
-  <h2 className="resultTitle">
-    Что вы получите
-  </h2>
+        <Reveal delay={120}>
+          <BeforeAfter />
+        </Reveal>
 
-</Reveal>
+        <Reveal delay={240}>
+          <button className="mainButton">
+            Заполнить анкету
+          </button>
+        </Reveal>
 
-<Reveal delay={150}>
+        <Reveal delay={360}>
+          <div className="socials">
 
-  <Carousel />
+            <a
+              className="socialButton"
+              href="https://vk.com/stubborn_ram"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="VK"
+            >
+              <FaVk />
+            </a>
 
-</Reveal>
-<Reveal>
+            <a
+              className="socialButton"
+              href="https://www.instagram.com/egor_baal?igsh=N29mZm54OW00bHpi&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </a>
 
-  <h2 className="resultTitle">
-    Результаты клиентов
-  </h2>
+            <a
+              className="socialButton"
+              href="https://t.me/stubborn_ram"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+            >
+              <FaTelegramPlane />
+            </a>
 
-</Reveal>
+          </div>
+        </Reveal>
 
-<Reveal delay={120}>
+      </div>
 
-  <BeforeAfter />
-
-</Reveal>
-
-<Reveal delay={240}>
-
-  <button className="mainButton">
-    Заполнить анкету
-  </button>
-
-</Reveal>
-
-<Reveal delay={360}>
-
-  <div className="socials">
-
-    <a
-      className="socialButton"
-      href="https://vk.com/stubborn_ram"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="VK"
-    >
-      <FaVk />
-    </a>
-
-    <a
-      className="socialButton"
-      href="https://www.instagram.com/egor_baal?igsh=N29mZm54OW00bHpi&utm_source=qr"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Instagram"
-    >
-      <FaInstagram />
-    </a>
-
-    <a
-      className="socialButton"
-      href="https://t.me/stubborn_ram"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Telegram"
-    >
-      <FaTelegramPlane />
-    </a>
-
-  </div>
-
-</Reveal>
-
-</div>
-
-</section>
+    </section>
   );
 }
 
