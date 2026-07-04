@@ -4,6 +4,7 @@ function Reveal({
   children,
   delay = 0,
   distance = 40,
+  immediate = false,
 }) {
 
   const ref = useRef(null);
@@ -14,6 +15,13 @@ useEffect(() => {
 
   const element = ref.current;
   if (!element) return;
+  if (immediate) {
+  const timer = setTimeout(() => {
+    setVisible(true);
+  }, delay);
+
+  return () => clearTimeout(timer);
+}
 
   const isMobile =
     /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);

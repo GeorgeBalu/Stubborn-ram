@@ -35,7 +35,7 @@ function Hero() {
 
       <div className="heroFeatures">
 
-        <Reveal delay={1300}>
+        <Reveal immediate delay={1300}>
           <div className="featureCard">
             Персональное онлайн ведение
           </div>
@@ -47,13 +47,13 @@ function Hero() {
           </div>
         </Reveal>
 
-        <Reveal delay={1600}>
+        <Reveal immediate delay={1600}>
           <div className="featureCard">
             Обучение грамотному тренингу
           </div>
         </Reveal>
 
-        <Reveal delay={1750}>
+        <Reveal immediate delay={1750}>
           <div className="featureCard">
             Цельная экосистема фитнеса
           </div>
