@@ -14,44 +14,27 @@ function Reveal({
 useEffect(() => {
 
   const element = ref.current;
+
   if (!element) return;
+
   if (immediate) {
-  const timer = setTimeout(() => {
-    setVisible(true);
-  }, delay);
 
-  return () => clearTimeout(timer);
-}
+    const timer = setTimeout(() => {
+      setVisible(true);
+    }, delay);
 
-  const isMobile =
-    /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    return () => clearTimeout(timer);
 
-  // =========================
-  // MOBILE FIX (Safari + Android)
-  // =========================
-  if (isMobile) {
-
-    const run = () => {
-      requestAnimationFrame(() => {
-        setVisible(true);
-      });
-    };
-
-    // даём браузеру отрисовать layout
-    setTimeout(run, 50);
-
-    return;
   }
 
-  // =========================
-  // DESKTOP (normal behavior)
-  // =========================
   const observer = new IntersectionObserver(
     ([entry]) => {
 
       if (entry.isIntersecting) {
+
         setVisible(true);
         observer.unobserve(element);
+
       }
 
     },

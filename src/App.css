@@ -846,3 +846,73 @@ section{
     }
 
 }
+/* ---------- Первый экран ---------- */
+
+.hero-topbar{
+    opacity:0;
+    animation:fadeUp .7s ease forwards;
+    animation-delay:.6s;
+}
+
+.hero-logo{
+    opacity:0;
+    transform:scale(.92);
+    animation:logoShow 1.2s ease forwards;
+}
+
+.hero-title{
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeUp .7s ease forwards;
+    animation-delay:1.2s;
+}
+
+.heroFeatures .featureCard{
+    opacity:0;
+    transform:translateY(22px);
+    animation:fadeUp .55s ease forwards;
+}
+
+.heroFeatures .featureCard:nth-child(1){
+    animation-delay:1.5s;
+}
+
+.heroFeatures .featureCard:nth-child(2){
+    animation-delay:1.7s;
+}
+
+.heroFeatures .featureCard:nth-child(3){
+    animation-delay:1.9s;
+}
+
+.heroFeatures .featureCard:nth-child(4){
+    animation-delay:2.1s;
+}
+
+@keyframes logoShow{
+
+    from{
+        opacity:0;
+        transform:scale(.92);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(22px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
