@@ -53,10 +53,6 @@ body::-webkit-scrollbar{
 
     padding-left:6px;
 
-    opacity:0;
-
-    transition:opacity .15s linear;
-
 }
 
 .app.loaded{
