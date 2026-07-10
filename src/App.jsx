@@ -4,12 +4,14 @@ import Hero from "./components/Hero";
 function App() {
   return (
     <div className="app">
-      <div className="phone">
-        <div className="page">
-          <Hero />
-        </div>
-      </div>
-    </div>
+
+  <div className="page">
+
+    <Hero />
+
+  </div>
+
+</div>
   );
 }
 
