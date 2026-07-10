@@ -1,5 +1,4 @@
 import logo from "../assets/obshee-logo.png";
-import HomeContent from "./HomeContent";
 
 function Hero() {
   return (
@@ -45,8 +44,7 @@ function Hero() {
 
       </div>
 
-      <HomeContent />
-
+      
     </section>
   );
 }
