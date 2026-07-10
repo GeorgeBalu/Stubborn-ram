@@ -6,10 +6,13 @@ function App() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    requestAnimationFrame(() => {
-      setLoaded(true);
-    });
-  }, []);
+  history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
+
+  requestAnimationFrame(() => {
+    setLoaded(true);
+  });
+}, []);
 
   return (
     <div className={`app ${loaded ? "loaded" : ""}`}>
