@@ -11,43 +11,52 @@ function Reveal({
 
   const [visible, setVisible] = useState(false);
 
-useEffect(() => {
+  useEffect(() => {
 
-  const element = ref.current;
+    const element = ref.current;
 
-  if (!element) return;
+    if (!element) return;
 
-  if (immediate) {
 
-    const timer = setTimeout(() => {
-      setVisible(true);
-    }, delay);
+    if (immediate) {
 
-    return () => clearTimeout(timer);
-
-  }
-
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-
-      if (entry.isIntersecting) {
+      const timer = setTimeout(() => {
 
         setVisible(true);
-        observer.unobserve(element);
 
-      }
+      }, delay);
 
-    },
-    {
-      threshold: 0.01,
+      return () => clearTimeout(timer);
+
     }
-  );
 
-  observer.observe(element);
 
-  return () => observer.disconnect();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
 
-}, []);
+        if (entry.isIntersecting) {
+
+          setVisible(true);
+
+          observer.unobserve(element);
+
+        }
+
+      },
+      {
+        threshold: 0.01,
+      }
+    );
+
+
+    observer.observe(element);
+
+
+    return () => observer.disconnect();
+
+
+  }, []);
+
 
   return (
 
