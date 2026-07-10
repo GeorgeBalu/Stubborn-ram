@@ -21,26 +21,53 @@ function Hero() {
       />
 
       <h2 className="heroTitle hero-title">
-        Натуральный бодибилдинг
-      </h2>
+  Экосистема
+  <span>натурального бодибилдинга</span>
+</h2>
+
+<div className="heroDivider"></div>
 
       <div className="heroFeatures">
 
         <div className="featureCard">
-          Персональное онлайн ведение
-        </div>
+  <div className="featureTitle">
+    Полное сопровождение
+  </div>
 
-        <div className="featureCard">
-          Составление тренировочных программ
-        </div>
+  <div className="featureText">
+    Все аспекты прогресса — под контролем
+  </div>
+</div>
 
-        <div className="featureCard">
-          Обучение грамотному тренингу
-        </div>
+<div className="featureCard">
+  <div className="featureTitle">
+    Индивидуальная стратегия
+  </div>
 
-        <div className="featureCard">
-          Цельная экосистема фитнеса
-        </div>
+  <div className="featureText">
+    Без шаблонов. Под ваши цели и возможности
+  </div>
+</div>
+
+<div className="featureCard">
+  <div className="featureTitle">
+    Научный подход
+  </div>
+
+  <div className="featureText">
+    Современные исследования вместо мифов
+  </div>
+</div>
+
+<div className="featureCard">
+  <div className="featureTitle">
+    Всё в одном приложении
+  </div>
+
+  <div className="featureText">
+    План, коммуникация и прогресс — в одном месте
+  </div>
+</div>
 
       </div>
 
