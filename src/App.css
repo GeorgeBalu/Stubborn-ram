@@ -55,12 +55,6 @@ body::-webkit-scrollbar{
 
 }
 
-.app.loaded{
-
-    opacity:1;
-
-}
-
 .page{
 
     width:100%;
@@ -309,8 +303,13 @@ box-shadow:none;
 
     line-height:1.5;
 
-}
+    opacity:0;
 
+    transform:translateY(22px);
+
+    animation:fadeUp .55s ease forwards;
+
+}
 .featureTitle{
 
     font-size:17px;
@@ -872,25 +871,19 @@ section{
     animation-delay:3.2s;
 }
 
-.heroFeatures .featureCard{
-    opacity:0;
-    transform:translateY(22px);
-    animation:fadeUp .55s ease forwards;
-}
-
-.heroFeatures .featureCard:nth-child(1){
+.feature-1{
     animation-delay:3.6s;
 }
 
-.heroFeatures .featureCard:nth-child(2){
+.feature-2{
     animation-delay:3.8s;
 }
 
-.heroFeatures .featureCard:nth-child(3){
+.feature-3{
     animation-delay:4.0s;
 }
 
-.heroFeatures .featureCard:nth-child(4){
+.feature-4{
     animation-delay:4.2s;
 }
 
@@ -963,6 +956,13 @@ section{
 
     filter:blur(1.8px);
 
-    opacity:.95;
+    opacity: 0;
+
+transform: translateY(22px);
+
+animation: fadeUp .55s ease forwards;
+
+animation-delay: 3.5s;
+    
 
 }

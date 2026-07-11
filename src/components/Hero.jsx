@@ -1,5 +1,4 @@
 import logo from "../assets/obshee-logo.png";
-import Reveal from "./Reveal";
 
 function Hero() {
   return (
@@ -22,68 +21,59 @@ function Hero() {
       />
 
       <h2 className="heroTitle hero-title">
-  Экосистема
-  <span>натурального бодибилдинга</span>
-</h2>
+        Экосистема
+        <span>натурального бодибилдинга</span>
+      </h2>
+
+      <div className="heroFeatures">
+
+        <div className="heroDivider"></div>
+
+        <div className="featureCard feature-1">
+          <div className="featureTitle">
+            Полное сопровождение
+          </div>
+
+          <div className="featureText">
+            Все аспекты процесса — под контролем
+          </div>
+        </div>
 
 
-     <div className="heroFeatures">
+        <div className="featureCard feature-2">
+          <div className="featureTitle">
+            Индивидуальная стратегия
+          </div>
 
-  <Reveal delay={3500}>
-    <div className="heroDivider"></div>
-  </Reveal>
+          <div className="featureText">
+            Без шаблонов. Под ваши цели и возможности
+          </div>
+        </div>
 
-  <Reveal delay={3650}>
-    <div className="featureCard">
-      <div className="featureTitle">
-        Полное сопровождение
+
+        <div className="featureCard feature-3">
+          <div className="featureTitle">
+            Научный подход
+          </div>
+
+          <div className="featureText">
+            Основано на современных исследованиях
+          </div>
+        </div>
+
+
+        <div className="featureCard feature-4">
+          <div className="featureTitle">
+            Всё в одном приложении
+          </div>
+
+          <div className="featureText">
+            План, коммуникация и прогресс — в одном месте
+          </div>
+        </div>
+
       </div>
 
-      <div className="featureText">
-        Все аспекты подготовки — под контролем
-      </div>
-    </div>
-  </Reveal>
-
-  <Reveal delay={3800}>
-    <div className="featureCard">
-      <div className="featureTitle">
-        Индивидуальная стратегия
-      </div>
-
-      <div className="featureText">
-        Под ваши цели и возможности
-      </div>
-    </div>
-  </Reveal>
-
-  <Reveal delay={3950}>
-    <div className="featureCard">
-      <div className="featureTitle">
-        Научный подход
-      </div>
-
-      <div className="featureText">
-        Основано на современных исследованиях
-      </div>
-    </div>
-  </Reveal>
-
-  <Reveal delay={4100}>
-    <div className="featureCard">
-      <div className="featureTitle">
-        Всё в одном приложении
-      </div>
-
-      <div className="featureText">
-        План, сопровождение и прогресс — в одном месте
-      </div>
-    </div>
-  </Reveal>
-
-</div>
-
-      
     </section>
   );
 }
