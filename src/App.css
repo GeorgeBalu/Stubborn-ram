@@ -463,7 +463,18 @@ box-shadow:none;
 
     height:auto;
 
-    margin:0 auto 28px;
+   
+}
+
+.aboutFrame{
+
+    width:calc(100% + 12px);
+
+    margin-left:-6px;
+
+    margin-right:-6px;
+
+    overflow:hidden;
 
 }
 

@@ -20,11 +20,13 @@ function HomeContent() {
 </Reveal>
 
 <Reveal delay={150}>
-  <img
-    src={aboutImage}
-    alt="Георгий Балухин"
-    className="aboutImage"
-  />
+  <div className="aboutFrame">
+    <img
+      src={aboutImage}
+      alt="Георгий Балухин"
+      className="aboutImage"
+    />
+  </div>
 </Reveal>
 
 <Reveal>
