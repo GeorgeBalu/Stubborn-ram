@@ -1,4 +1,4 @@
-import aboutImage from "../assets/obo-mne.jpg";
+import aboutImage from "../assets/obo-mne.png";
 import Carousel from "./Carousel";
 import Reveal from "./Reveal";
 import BeforeAfter from "./BeforeAfter";
@@ -11,27 +11,27 @@ import {
 function HomeContent() {
   return (
     <>
-     <div className="bottomButtons">
+      <div className="bottomButtons">
 
         <Reveal>
-          <h2 className="aboutTitle">
-            Кто я
-          </h2>
-        </Reveal>
+  <h2 className="aboutTitle">
+    Кто стоит за Stubborn Ram
+  </h2>
+</Reveal>
 
-        <Reveal delay={150}>
-          <img
-            src={aboutImage}
-            alt="Кто я"
-            className="aboutImage"
-          />
-        </Reveal>
+<Reveal delay={150}>
+  <img
+    src={aboutImage}
+    alt="Георгий Балухин"
+    className="aboutImage"
+  />
+</Reveal>
 
-        <Reveal>
-          <h2 className="resultTitle">
-            Что вы получите
-          </h2>
-        </Reveal>
+<Reveal>
+  <h2 className="resultTitle">
+    Что вы получите
+  </h2>
+</Reveal>
 
         <Reveal delay={150}>
           <Carousel />

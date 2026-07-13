@@ -35,7 +35,7 @@ function Hero() {
           </div>
 
           <div className="featureText">
-            Все аспекты процесса — под контролем
+            Все аспекты прогресса — под контролем
           </div>
         </div>
 
