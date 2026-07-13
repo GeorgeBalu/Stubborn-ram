@@ -14,7 +14,7 @@ function HomeContent() {
       <div className="bottomButtons">
 
         <Reveal>
-  <h2 className="aboutTitle">
+  <h2 className="sectionTitle aboutTitle">
     Кто стоит за Stubborn Ram
   </h2>
 </Reveal>
@@ -30,8 +30,8 @@ function HomeContent() {
 </Reveal>
 
 <Reveal>
-  <h2 className="resultTitle">
-    Что вы получите
+  <h2 className="sectionTitle">
+        Что вы получите
   </h2>
 </Reveal>
 
@@ -40,7 +40,7 @@ function HomeContent() {
         </Reveal>
 
         <Reveal>
-          <h2 className="resultTitle">
+          <h2 className="sectionTitle">
             Результаты клиентов
           </h2>
         </Reveal>

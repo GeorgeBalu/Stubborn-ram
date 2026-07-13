@@ -219,7 +219,7 @@ box-shadow:none;
 }
 
 /* ==========================
-   ЗАГОЛОВОК
+   ТИПОГРАФИКА
 ========================== */
 
 .heroTitle{
@@ -233,9 +233,9 @@ box-shadow:none;
 
     text-align:center;
 
-    font-size:27px;
+    font-size:clamp(24px,6vw,27px);
 
-    line-height:1.1;
+    line-height:1.12;
 
     font-weight:700;
 
@@ -254,7 +254,7 @@ box-shadow:none;
 
     margin-top:4px;
 
-    font-size:21px;
+    font-size:clamp(18px,5vw,21px);
 
     font-weight:500;
 
@@ -263,6 +263,78 @@ box-shadow:none;
     letter-spacing:-0.01em;
 
     color:rgba(255,255,255,.82);
+
+}
+
+.sectionTitle{
+
+    width:100%;
+
+    max-width:92%;
+
+    margin:80px auto 22px;
+
+    text-align:center;
+
+    font-size:clamp(23px,5.9vw,29px);
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    color:#ffffff;
+
+    text-wrap:balance;
+
+}
+
+.aboutTitle{
+
+    margin:80px auto 30px;
+
+}
+
+.featureTitle{
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+}
+
+.featureText{
+
+    margin-top:6px;
+
+    font-size:13px;
+
+    line-height:1.45;
+
+    color:rgba(255,255,255,.65);
+
+}
+
+.clientTitle{
+
+    text-align:center;
+
+    font-size:24px;
+
+    margin-top:20px;
+
+}
+
+.clientSubtitle{
+
+    text-align:center;
+
+    color:#bbbbbb;
+
+    margin-top:8px;
+
+    margin-bottom:20px;
 
 }
 
@@ -310,27 +382,7 @@ box-shadow:none;
     animation:fadeUp .55s ease forwards;
 
 }
-.featureTitle{
 
-    font-size:17px;
-
-    font-weight:600;
-
-    color:#ffffff;
-
-}
-
-.featureText{
-
-    margin-top:6px;
-
-    font-size:13px;
-
-    line-height:1.45;
-
-    color:rgba(255,255,255,.65);
-
-}
 .bottomButtons{
 
     width:100%;
@@ -437,23 +489,6 @@ box-shadow:none;
     box-shadow:0 0 22px rgba(255,98,0,.55);
 
 }
-.aboutTitle{
-
-    width:100%;
-
-    text-align:center;
-
-    font-size:22px;
-
-    font-weight:700;
-
-    line-height:1.2;
-
-    margin:30px 0 24px;
-
-    color:#ffffff;
-
-}
 
 .aboutImage{
 
@@ -491,19 +526,6 @@ box-shadow:none;
 }
 
 
-.resultTitle{
-
-    width:100%;
-
-    text-align:center;
-
-    font-size:28px;
-
-    font-weight:700;
-
-    margin:34px 0 20px;
-
-}
 .carousel{
 
     width:100%;
@@ -625,28 +647,6 @@ box-shadow:none;
         0 10px 24px rgba(0,0,0,.30);
 
 }
-.clientTitle{
-
-    text-align:center;
-
-    font-size:24px;
-
-    margin-top:20px;
-
-}
-
-.clientSubtitle{
-
-    text-align:center;
-
-    color:#bbbbbb;
-
-    margin-top:8px;
-
-    margin-bottom:20px;
-
-}
-
 
 
 .compareContainer{
