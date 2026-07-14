@@ -1,33 +1,27 @@
-:root{
-
---bg:#070707;
-
---card:#121212;
-
---accent:#ff6b00;
-
---accent2:#d92727;
-
---text:#ffffff;
-
---text2:#bfbfbf;
-
+@font-face {
+    font-family: "Comfortaa";
+    src: url("./assets/fonts/Comfortaa.ttf") format("truetype");
+    font-weight: 300 600;
+    font-style: normal;
+    font-display: swap;
+}
+:root {
+  --bg: #070707;
+  --card: #121212;
+  --accent: #ff6b00;
+  --accent2: #d92727;
+  --text: #ffffff;
+  --text2: #bfbfbf;
 }
 
-html{
-
-scroll-behavior:smooth;
-
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-
-background:var(--bg);
-
-font-family:"Comfortaa",sans-serif;
-
-color:var(--text);
-
-overflow-x:hidden;
-
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: "Comfortaa", sans-serif;
+  color: var(--text);
+  overflow-x: hidden;
 }
