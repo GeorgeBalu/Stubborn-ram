@@ -1,6 +1,6 @@
 import aboutImage from "../assets/obo-mne.png";
-import Carousel from "./Carousel";
 import Reveal from "./Reveal";
+import SupportCarousel from "./SupportCarousel";
 import BeforeAfter from "./BeforeAfter";
 import {
   FaVk,
@@ -37,13 +37,13 @@ function HomeContent() {
 
 <Reveal>
   <h2 className="sectionTitle">
-        Что вы получите
+        Как проходит сопровождение
   </h2>
 </Reveal>
 
         <Reveal delay={150}>
-          <Carousel />
-        </Reveal>
+  <SupportCarousel />
+</Reveal>
 
         <Reveal>
           <h2 className="sectionTitle">
