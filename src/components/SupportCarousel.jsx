@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
@@ -8,11 +7,10 @@ import "swiper/css/pagination";
 
 import "./SupportCarousel.css";
 import supportSlides from "../data/supportSlides";
-import ImageModal from "./ImageModal";
+import ImageViewer from "./ImageViewer";
 
 function SupportCarousel() {
-  const [selectedImage, setSelectedImage] = useState(null);
-
+  const [currentIndex, setCurrentIndex] = useState(null);
   return (
     <section className="supportCarousel">
       <Swiper
@@ -34,7 +32,7 @@ function SupportCarousel() {
                     src={slide.src}
                     alt={slide.title}
                     className="supportMedia"
-                    onClick={() => setSelectedImage(slide.src)}
+                    onClick={() => setCurrentIndex(index)}
                     style={{ cursor: "zoom-in" }}
                   />
                 ) : (
@@ -52,9 +50,14 @@ function SupportCarousel() {
         ))}
       </Swiper>
 
-      <ImageModal
-        image={selectedImage}
-        onClose={() => setSelectedImage(null)}
+      <ImageViewer
+        images={supportSlides
+          .filter((slide) => slide.type === "image" && slide.src)
+          .map((slide) => ({
+            src: slide.src,
+          }))}
+        index={currentIndex}
+        onClose={() => setCurrentIndex(null)}
       />
     </section>
   );
