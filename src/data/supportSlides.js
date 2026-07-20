@@ -1,3 +1,5 @@
+import anketa from "../assets/support/anketa.png";
+import programmaImage from "../assets/support/programma.png";
 const supportSlides = [
   {
     id: 1,
@@ -5,7 +7,7 @@ const supportSlides = [
     description:
       "Несколько вопросов о ваших целях, здоровье и опыте помогут составить сопровождение с учетом ваших особенностей.",
     type: "image",
-    src: null,
+    src: anketa,
   },
 
   {
@@ -14,7 +16,7 @@ const supportSlides = [
     description:
       "Программа в виде удобного изображения, которое достаточно сохранить на телефоне, а все расчеты, планирование и контроль прогресса остаются на моей стороне.",
     type: "image",
-    src: null,
+    src: programmaImage,
   },
 
   {
