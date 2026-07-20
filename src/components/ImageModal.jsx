@@ -28,32 +28,50 @@ function ImageModal({ image, onClose }) {
   return (
     <div className="imageModalOverlay" onClick={onClose}>
       <div className="imageModalContent" onClick={(e) => e.stopPropagation()}>
-        <button className="imageModalClose" onClick={onClose}>
-          ×
-        </button>
+        
 
-        <TransformWrapper
-          initialScale={1}
-          minScale={1}
-          maxScale={5}
-          centerOnInit
-          doubleClick={{
-            mode: "toggle",
-          }}
-          wheel={{
-            step: 0.15,
-          }}
-          pinch={{
-            step: 5,
-          }}
-        >
-          <TransformComponent
-            wrapperClass="viewerWrapper"
-            contentClass="viewerContent"
-          >
-            <img src={image} alt="" className="imageModalImage" />
-          </TransformComponent>
-        </TransformWrapper>
+       <TransformWrapper
+  initialScale={1}
+  minScale={1}
+  maxScale={5}
+  centerOnInit
+  limitToBounds
+  smooth
+  alignmentAnimation={{
+    disabled: false,
+    sizeX: 100,
+    sizeY: 100,
+    animationTime: 250,
+    animationType: "easeOut",
+  }}
+  doubleClick={{
+    mode: "toggle",
+  }}
+  wheel={{
+    step: 0.15,
+  }}
+  pinch={{
+    step: 5,
+  }}
+>
+  {({ state }) => (
+    <TransformComponent
+      wrapperClass="viewerWrapper"
+      contentClass="viewerContent"
+    >
+      <img
+        src={image}
+        alt=""
+        className="imageModalImage"
+        onClick={() => {
+          if (state.scale <= 1.01) {
+            onClose();
+          }
+        }}
+      />
+    </TransformComponent>
+  )}
+</TransformWrapper>
       </div>
     </div>
   );
