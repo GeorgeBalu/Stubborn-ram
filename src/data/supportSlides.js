@@ -1,5 +1,7 @@
 import anketa from "../assets/support/anketa.png";
 import programmaImage from "../assets/support/programma.png";
+import pitanie from "../assets/support/pitanie.png";
+import analysNedeli from "../assets/support/analys_nedeli.png";
 
 const supportSlides = [
   {
@@ -24,9 +26,9 @@ const supportSlides = [
     id: 3,
     title: "Рекомендации по питанию",
     description:
-      "Индивидуальный расчет КБЖУ и всех необходимых показателей для достижения вашей цели.",
+      "Рацион строится с учетом ваших целей, предпочтений и образа жизни. Никаких шаблонов и строгих ограничений.",
     type: "image",
-    src: null,
+    src: pitanie,
   },
 
   {
@@ -44,7 +46,7 @@ const supportSlides = [
     description:
       "На основе вашего короткого отчета я веду собственные рабочие таблицы, анализирую показатели и своевременно корректирую тренировки и питание.",
     type: "image",
-    src: null,
+    src: analysNedeli,
   },
 
   {
@@ -52,15 +54,6 @@ const supportSlides = [
     title: "Подробная обратная связь",
     description:
       "После анализа вы получаете персональный видеоразбор с рекомендациями и планом работы на следующую неделю.",
-    type: "image",
-    src: null,
-  },
-
-  {
-    id: 7,
-    title: "Сопровождение меняется вместе с вашей целью",
-    description:
-      "При переходе на новый этап корректируются тренировки, питание и стратегия дальнейшей работы.",
     type: "image",
     src: null,
   },
