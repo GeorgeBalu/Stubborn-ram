@@ -23,6 +23,12 @@ function ImageViewer({ images, index, onClose }) {
         maxZoomPixelRatio: 4,
         scrollToZoom: true,
       }}
+      render={{
+        buttonZoom: () => null,
+        buttonPrev: () => null,
+        buttonNext: () => null,
+        buttonClose: () => null,
+      }}
     />
   );
 }
