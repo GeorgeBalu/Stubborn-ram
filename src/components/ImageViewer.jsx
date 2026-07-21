@@ -8,6 +8,7 @@ import "yet-another-react-lightbox/styles.css";
 function ImageViewer({ images, index, onClose }) {
   return (
     <Lightbox
+      key={index}
       open={index !== null}
       close={onClose}
       index={index ?? 0}

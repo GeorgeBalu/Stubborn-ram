@@ -2,6 +2,7 @@ import anketa from "../assets/support/anketa.png";
 import programmaImage from "../assets/support/programma.png";
 import pitanie from "../assets/support/pitanie.png";
 import analysNedeli from "../assets/support/analys_nedeli.png";
+import obratnayaSvyaz from "../assets/support/obratnaya_svyaz.mp4";
 
 const supportSlides = [
   {
@@ -54,8 +55,8 @@ const supportSlides = [
     title: "Подробная обратная связь",
     description:
       "После анализа вы получаете персональный видеоразбор с рекомендациями и планом работы на следующую неделю.",
-    type: "image",
-    src: null,
+    type: "video",
+    src: obratnayaSvyaz,
   },
 
   {

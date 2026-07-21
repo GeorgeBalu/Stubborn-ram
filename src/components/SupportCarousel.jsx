@@ -11,6 +11,15 @@ import ImageViewer from "./ImageViewer";
 
 function SupportCarousel() {
   const [currentIndex, setCurrentIndex] = useState(null);
+
+  // Массив изображений для Lightbox
+  const images = supportSlides
+    .filter((slide) => slide.type === "image" && slide.src)
+    .map((slide) => ({
+      src: slide.src,
+      title: slide.title,
+    }));
+
   return (
     <section className="supportCarousel">
       <Swiper
@@ -22,40 +31,65 @@ function SupportCarousel() {
         pagination={{
           clickable: true,
         }}
+        onSlideChange={() => {
+          document.querySelectorAll("video").forEach((video) => {
+            video.pause();
+            video.currentTime = 0;
+          });
+        }}
       >
         {supportSlides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="supportCard">
-              <div className="supportImage">
-                {slide.type === "image" && slide.src ? (
+
+              {slide.type === "image" && slide.src ? (
+                <div className="supportImage">
                   <img
                     src={slide.src}
                     alt={slide.title}
                     className="supportMedia"
-                    onClick={() => setCurrentIndex(index)}
+                    onClick={() =>
+                      setCurrentIndex(
+                        images.findIndex((image) => image.src === slide.src)
+                      )
+                    }
                     style={{ cursor: "zoom-in" }}
                   />
-                ) : (
-                  <div className="supportPlaceholder">Раздел в разработке</div>
-                )}
-              </div>
+                </div>
+              ) : slide.type === "video" && slide.src ? (
+                <div className="supportVideo">
+                  <video
+                    className="supportMediaVideo"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src={slide.src} type="video/mp4" />
+                    Ваш браузер не поддерживает видео.
+                  </video>
+                </div>
+              ) : (
+                <div className="supportImage">
+                  <div className="supportPlaceholder">
+                    Раздел в разработке
+                  </div>
+                </div>
+              )}
 
               <div className="supportContent">
                 <h3 className="supportTitle">{slide.title}</h3>
 
-                <p className="supportDescription">{slide.description}</p>
+                <p className="supportDescription">
+                  {slide.description}
+                </p>
               </div>
+
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
       <ImageViewer
-        images={supportSlides
-          .filter((slide) => slide.type === "image" && slide.src)
-          .map((slide) => ({
-            src: slide.src,
-          }))}
+        images={images}
         index={currentIndex}
         onClose={() => setCurrentIndex(null)}
       />
