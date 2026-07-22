@@ -1,54 +1,50 @@
 import aboutImage from "../assets/obo-mne.png";
 import Reveal from "./Reveal";
 import SupportCarousel from "./SupportCarousel";
+import FAQ from "./FAQ";
 import BeforeAfter from "./BeforeAfter";
-import {
-  FaVk,
-  FaInstagram,
-  FaTelegramPlane,
-} from "react-icons/fa";
+import { FaVk, FaInstagram, FaTelegramPlane } from "react-icons/fa";
 
 function HomeContent() {
   return (
     <>
       <div className="bottomButtons">
-
         <Reveal>
-  <h2 className="sectionTitle aboutTitle">
-    Кто стоит за Stubborn Ram
-  </h2>
-</Reveal>
-
-<Reveal delay={150}>
-  <div className="aboutFrame">
-    <img
-      src={aboutImage}
-      alt="Георгий Балухин"
-      className="aboutImage"
-    />
-  </div>
-</Reveal>
-
-<Reveal delay={250}>
-  <p className="faithText">
-  Иисус Христос — Господь и Спаситель
-  </p>
-</Reveal>
-
-<Reveal>
-  <h2 className="sectionTitle">
-        Как проходит сопровождение
-  </h2>
-</Reveal>
+          <h2 className="sectionTitle aboutTitle">Кто стоит за Stubborn Ram</h2>
+        </Reveal>
 
         <Reveal delay={150}>
-  <SupportCarousel />
-</Reveal>
+          <div className="aboutFrame">
+            <img
+              src={aboutImage}
+              alt="Георгий Балухин"
+              className="aboutImage"
+            />
+          </div>
+        </Reveal>
+
+        <Reveal delay={250}>
+          <p className="faithText">Иисус Христос — Господь и Спаситель</p>
+        </Reveal>
 
         <Reveal>
-          <h2 className="sectionTitle">
-            Результаты клиентов
-          </h2>
+          <h2 className="sectionTitle">Как проходит сопровождение</h2>
+        </Reveal>
+
+        <Reveal delay={150}>
+          <SupportCarousel />
+        </Reveal>
+
+        <Reveal>
+          <h2 className="sectionTitle">Вопросы и ответы</h2>
+        </Reveal>
+
+        <Reveal delay={150}>
+          <FAQ />
+        </Reveal>
+
+        <Reveal>
+          <h2 className="sectionTitle">Результаты клиентов</h2>
         </Reveal>
 
         <Reveal delay={120}>
@@ -56,14 +52,11 @@ function HomeContent() {
         </Reveal>
 
         <Reveal delay={240}>
-          <button className="mainButton">
-            Заполнить анкету
-          </button>
+          <button className="mainButton">Заполнить анкету</button>
         </Reveal>
 
         <Reveal delay={360}>
           <div className="socials">
-
             <a
               className="socialButton"
               href="https://vk.com/stubborn_ram"
@@ -93,10 +86,8 @@ function HomeContent() {
             >
               <FaTelegramPlane />
             </a>
-
           </div>
         </Reveal>
-
       </div>
     </>
   );
