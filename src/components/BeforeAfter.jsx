@@ -15,20 +15,20 @@ function BeforeAfter() {
     {
       before: client01Before,
       after: client01After,
-      title: "Минус 18 кг",
-      subtitle: "8 месяцев работы",
+      title: "Рекомпозиция. Минус 6 кг",
+      subtitle: "10 месяцев работы",
     },
     {
       before: client02Before,
       after: client02After,
-      title: "+9 кг мышечной массы",
-      subtitle: "14 месяцев работы",
+      title: "Рекомпозиция. Минус 6 кг",
+      subtitle: "10 месяцев работы",
     },
     {
       before: client03Before,
       after: client03After,
-      title: "Рекомпозиция тела",
-      subtitle: "10 месяцев работы",
+      title: "Рекомпозиция в сторону набора мышечной массы",
+      subtitle: "12 месяцев работы",
     },
   ];
 
@@ -43,16 +43,10 @@ function BeforeAfter() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        boxShadow:
-          "0 0 0 4px rgba(255,98,0,.08), 0 0 18px rgba(255,98,0,.35)",
+        boxShadow: "0 0 0 4px rgba(255,98,0,.08), 0 0 18px rgba(255,98,0,.35)",
       }}
     >
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-      >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <path
           d="M9 6L3 12L9 18"
           stroke="white"
@@ -72,66 +66,45 @@ function BeforeAfter() {
     </div>
   );
 
-const [currentClient, setCurrentClient] = useState(0);
-const [isChanging, setIsChanging] = useState(false);
+  const [currentClient, setCurrentClient] = useState(0);
+  const [isChanging, setIsChanging] = useState(false);
 
   const nextClient = () => {
+    if (isChanging) return;
 
-  if (isChanging) return;
+    setIsChanging(true);
 
-  setIsChanging(true);
+    setTimeout(() => {
+      setCurrentClient((prev) => (prev + 1) % clients.length);
 
-  setTimeout(() => {
+      setIsChanging(false);
+    }, 250);
+  };
 
-    setCurrentClient((prev) =>
-      (prev + 1) % clients.length
-    );
+  const prevClient = () => {
+    if (isChanging) return;
 
-    setIsChanging(false);
+    setIsChanging(true);
 
-  }, 250);
+    setTimeout(() => {
+      setCurrentClient((prev) => (prev === 0 ? clients.length - 1 : prev - 1));
 
-};
-
-const prevClient = () => {
-
-  if (isChanging) return;
-
-  setIsChanging(true);
-
-  setTimeout(() => {
-
-    setCurrentClient((prev) =>
-      prev === 0 ? clients.length - 1 : prev - 1
-    );
-
-    setIsChanging(false);
-
-  }, 250);
-
-};
+      setIsChanging(false);
+    }, 250);
+  };
 
   return (
     <div className="beforeAfter">
       <div className="beforeAfterCard">
-
         <div
-  key={currentClient}
-  className={`clientContent ${
-    isChanging ? "changing" : ""
-  }`}
->
+          key={currentClient}
+          className={`clientContent ${isChanging ? "changing" : ""}`}
+        >
+          <h3 className="clientTitle">{clients[currentClient].title}</h3>
 
-          <h3 className="clientTitle">
-            {clients[currentClient].title}
-          </h3>
-
-          <p className="clientSubtitle">
-            {clients[currentClient].subtitle}
-          </p>
+          <p className="clientSubtitle">{clients[currentClient].subtitle}</p>
 
           <div className="compareContainer">
-
             <ReactCompareImage
               key={currentClient}
               leftImage={clients[currentClient].before}
@@ -141,25 +114,17 @@ const prevClient = () => {
               sliderLineWidth={2}
               sliderLineColor="#ff6200"
             />
-
           </div>
-
         </div>
 
         <div className="clientButtons">
-
           <button
-  className="clientArrow leftArrow"
-  onClick={prevClient}
-  disabled={isChanging}
-  aria-label="Предыдущий клиент"
->
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
+            className="clientArrow leftArrow"
+            onClick={prevClient}
+            disabled={isChanging}
+            aria-label="Предыдущий клиент"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
               <path
                 d="M15 6L9 12L15 18"
                 stroke="white"
@@ -171,41 +136,34 @@ const prevClient = () => {
           </button>
 
           <div className="clientDots">
-
             {clients.map((_, index) => (
               <button
-    key={index}
-    className={`clientDot ${
-        index === currentClient ? "active" : ""
-    }`}
-    disabled={isChanging}
-    onClick={() => {
-        if (isChanging || index === currentClient) return;
+                key={index}
+                className={`clientDot ${
+                  index === currentClient ? "active" : ""
+                }`}
+                disabled={isChanging}
+                onClick={() => {
+                  if (isChanging || index === currentClient) return;
 
-        setIsChanging(true);
+                  setIsChanging(true);
 
-        setTimeout(() => {
-            setCurrentClient(index);
-            setIsChanging(false);
-        }, 250);
-    }}
-/>
+                  setTimeout(() => {
+                    setCurrentClient(index);
+                    setIsChanging(false);
+                  }, 250);
+                }}
+              />
             ))}
-
           </div>
 
           <button
-  className="clientArrow rightArrow"
-  onClick={nextClient}
-  disabled={isChanging}
-  aria-label="Следующий клиент"
->
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
+            className="clientArrow rightArrow"
+            onClick={nextClient}
+            disabled={isChanging}
+            aria-label="Следующий клиент"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
               <path
                 d="M9 6L15 12L9 18"
                 stroke="white"
@@ -215,9 +173,7 @@ const prevClient = () => {
               />
             </svg>
           </button>
-
         </div>
-
       </div>
     </div>
   );
